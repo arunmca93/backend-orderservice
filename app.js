@@ -53,7 +53,7 @@ app.use((req, res, next) => {
 
 // ================= ROOT ROUTE =================
 app.get("/", (req, res) => {
-  res.send("🚀 Order Service is running successfully 123");
+  res.send("🚀 Order Service is running successfully 456");
 });
 
 // ================= HEALTH CHECK =================
