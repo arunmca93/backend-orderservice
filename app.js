@@ -46,8 +46,8 @@ app.use(express.json());
 app.use(compression());
 
 app.use((req, res, next) => {
-  if (req.url.startsWith("/api/user-service")) {
-    req.url = req.url.replace("/api/user-service", "");
+  if (req.url.startsWith("/api/order-service")) {
+    req.url = req.url.replace("/api/order-service", "");
   }
   next();
 });
