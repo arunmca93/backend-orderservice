@@ -45,6 +45,13 @@ app.options("*", cors(corsOptions)); // handle preflight
 app.use(express.json());
 app.use(compression());
 
+app.use((req, res, next) => {
+  if (req.url.startsWith("/api/user-service")) {
+    req.url = req.url.replace("/api/user-service", "");
+  }
+  next();
+});
+
 // Allow private network access (Chrome requirement sometimes)
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Private-Network", "true");
